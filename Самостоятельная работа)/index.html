@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Шпаргалка</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #222;
+    }
+    .container {
+      display: flex;
+      border: 2px solid #444;
+      margin: 15px 0;
+      padding: 10px;
+      min-height: 120px;
+      background: #fff;
+      flex-wrap: nowrap;
+    }
+    .item {
+      width: 60px;
+      height: 60px;
+      background: #4CAF50;
+      margin: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .multi {
+      flex-wrap: wrap; /* для align-content */
+      min-height: 250px;
+    }
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 2px dashed #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Flexbox Шпаргалка</h1>
+  <p>Здесь собраны примеры <code>justify-content</code>, <code>align-items</code> и <code>align-content</code>.</p>
+
+  <hr>
+
+  <h2>1️⃣ justify-content (горизонтальное выравнивание)</h2>
+  <div class="container" style="justify-content: flex-start;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>flex-start</b> — элементы прижаты к началу.</p>
+
+  <div class="container" style="justify-content: center;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>center</b> — по центру.</p>
+
+  <div class="container" style="justify-content: flex-end;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>flex-end</b> — прижаты к концу.</p>
+
+  <div class="container" style="justify-content: space-between;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>space-between</b> — равные промежутки между элементами.</p>
+
+  <div class="container" style="justify-content: space-around;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>space-around</b> — равные отступы вокруг элементов.</p>
+
+  <div class="container" style="justify-content: space-evenly;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>space-evenly</b> — равные промежутки везде.</p>
+
+  <hr>
+
+  <h2>2️⃣ align-items (вертикальное выравнивание, одна строка)</h2>
+  <div class="container" style="align-items: flex-start;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>flex-start</b> — элементы прижаты к верху.</p>
+
+  <div class="container" style="align-items: center;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>center</b> — по центру по вертикали.</p>
+
+  <div class="container" style="align-items: flex-end;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+  <p><b>flex-end</b> — прижаты к низу.</p>
+
+  <div class="container" style="align-items: stretch;">
+    <div class="item" style="height:auto;">1</div>
+    <div class="item" style="height:auto;">2</div>
+    <div class="item" style="height:auto;">3</div>
+  </div>
+  <p><b>stretch</b> — растянуты по высоте контейнера.</p>
+
+  <div class="container" style="align-items: baseline;">
+    <div class="item" style="font-size:12px;">1</div>
+    <div class="item" style="font-size:24px;">2</div>
+    <div class="item" style="font-size:36px;">3</div>
+  </div>
+  <p><b>baseline</b> — выравнивание по линии текста.</p>
+
+  <hr>
+
+  <h2>3️⃣ align-content (вертикальное выравнивание нескольких строк)</h2>
+  <div class="container multi" style="align-content: flex-start;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>flex-start</b> — ряды прижаты к верху.</p>
+<div class="container multi" style="align-content: flex-end;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>flex-end</b> — ряды прижаты к низу.</p>
+
+  <div class="container multi" style="align-content: center;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>center</b> — ряды по центру контейнера.</p>
+
+  <div class="container multi" style="align-content: space-between;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>space-between</b> — ряды распределены с равными промежутками.</p>
+
+  <div class="container multi" style="align-content: space-around;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>space-around</b> — ряды с равными отступами вокруг.</p>
+
+  <div class="container multi" style="align-content: space-evenly;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>space-evenly</b> — равные промежутки между всеми рядами.</p>
+
+  <div class="container multi" style="align-content: stretch;">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+  <p><b>stretch</b> — ряды растянуты на всю высоту контейнера.</p>
+
+</body>
+</html>
